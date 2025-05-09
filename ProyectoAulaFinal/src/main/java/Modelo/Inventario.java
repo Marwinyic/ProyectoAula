@@ -12,6 +12,12 @@ public class Inventario {
         productos = new ArrayList<>();
         ganancias = 0.0;
     }
+    public ArrayList<Producto> getListaProductos() {
+        return productos;
+    }
+    public void setListaProductos(ArrayList<Producto> listaProductos) {
+        this.productos = listaProductos;
+    }
 
     public void agregar(Producto p) {
         productos.add(p);
@@ -26,6 +32,14 @@ public class Inventario {
             if (p.getId() == id) return p;
         }
         return null;
+    }
+    public boolean eliminarProducto(int id) {
+        Producto p = buscarPorId(id);
+        if (p != null) {
+            productos.remove(p);
+            return true;
+        }
+        return false;
     }
 
     public boolean venderProducto(int id, int cantidad) {
@@ -42,8 +56,8 @@ public class Inventario {
     public double getGanancias() {
         return ganancias;
     }
-    public ArrayList<Producto> getListaProductos() {
-        return productos; 
-}
+    public void setGanancias(double ganancias) {
+        this.ganancias = ganancias;
+    }
 
 }

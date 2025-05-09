@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.hola;
+package Vista;
 
-import Modelo.Empleado;
+import Modelo.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -13,31 +13,28 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author bello
  */
-public class tablaEmpleados extends javax.swing.JFrame {
+public class tablaClientes extends javax.swing.JFrame {
 
     /**
-     * Creates new form tablaEmpleados
+     * Creates new form tablaClientes
      */
-    public tablaEmpleados() {
+    public tablaClientes() {
         initComponents();
         
-
+        
     }
-    public tablaEmpleados(List<Empleado> empleados) {
+    public tablaClientes(List<Cliente> clientes) {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         DefaultTableModel modelo = new DefaultTableModel(new String[]{"ID", "Nombre"}, 0);
-        for (Empleado e : empleados) {
-            modelo.addRow(new Object[]{e.getId(), e.getNombre()});
+        for (Cliente c : clientes) {
+            modelo.addRow(new Object[]{c.getId(), c.getNombre()});
         }
-        tablae.setModel(modelo);
+        tablac.setModel(modelo);
     }
+
     
-
-        
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,12 +45,12 @@ public class tablaEmpleados extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablae = new javax.swing.JTable();
+        tablac = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tablae.setModel(new javax.swing.table.DefaultTableModel(
+        tablac.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -61,27 +58,27 @@ public class tablaEmpleados extends javax.swing.JFrame {
                 "Id", "Nombre"
             }
         ));
-        jScrollPane1.setViewportView(tablae);
+        jScrollPane1.setViewportView(tablac);
 
-        jLabel1.setText("Tabla de Empleados ");
+        jLabel1.setText("Tabla de Empleados");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(195, 195, 195)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(196, 196, 196))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE))
         );
 
         pack();
@@ -90,7 +87,7 @@ public class tablaEmpleados extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]){
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -104,20 +101,20 @@ public class tablaEmpleados extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tablaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tablaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tablaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tablaEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tablaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tablaEmpleados().setVisible(true);
+                new tablaClientes().setVisible(true);
             }
         });
     }
@@ -125,6 +122,6 @@ public class tablaEmpleados extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablae;
+    private javax.swing.JTable tablac;
     // End of variables declaration//GEN-END:variables
 }
